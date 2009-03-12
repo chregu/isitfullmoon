@@ -1,0 +1,105 @@
+html, body{
+    background:#15152d;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #f9f9f9;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 100%;
+    text-align:center;
+}
+
+h1.answer {
+    font-size: 14em;
+    font-weight: normal;
+    text-shadow: #000 1px 3px 3px;
+    color: #f9f9f9;
+    text-align: right;
+    padding: 5px 230px 0 0;
+}
+
+h1 .first {
+    letter-spacing: -0.1em;
+}
+
+h2, p, li {
+    text-shadow: #000 1px 1px 1px;
+    color: #ccccdc;
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.4em;
+}
+
+.column {
+    float: left;
+}
+
+.column.left {
+    width: 340px;
+    padding-right: 30px;
+}
+
+.column.right {
+    width: 250px;
+}
+
+ul {
+    margin-bottom: 10px;
+}
+
+a {
+    color: white;
+}
+
+li {
+    list-style-type: circle;
+    margin-left: 15px;
+}
+
+h2 {
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+p.subtitle {
+    font-size: 2em;
+    padding: 5px 0 0 220px;
+    margin: 0;
+}
+
+.distance {
+    float: left;
+    height: 50%;
+    margin-bottom: -150px;
+}
+
+.container {
+    position: relative;
+    clear: left;
+    height: 300px;
+    width: 620px;
+    margin: 0 auto;
+    text-align: left;
+    background-repeat: no-repeat;
+    background-position: 400px top;
+}
+
+body.moon .container {
+    background-image: url("moon.png");
+}
+
+body.fullmoon .container {
+    background-image: url("fullmoon.png");
+}
+
+.about {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+}
+
