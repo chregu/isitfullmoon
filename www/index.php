@@ -7,7 +7,7 @@
         <title>Is it full moon?</title>
     <link rel="stylesheet" href="media/reset.css" type="text/css">    
     <link rel="stylesheet" href="media/screen.css" type="text/css">
-<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
     </head>
     <body class="<?php echo $data['status'] == 'Yes' ? 'fullmoon' : 'moon' ?>">
         <div class="distance"></div>
