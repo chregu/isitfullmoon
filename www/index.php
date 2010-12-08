@@ -1,13 +1,18 @@
 <?php include("../inc/fullmoon.php"); ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-        <title>Is it full moon?</title>
-    <link rel="stylesheet" href="media/reset.css" type="text/css">    
-    <link rel="stylesheet" href="media/screen.css" type="text/css">
-    <link rel="shortcut icon" href="favicon.ico">
+        <meta charset=utf-8 />
+        <title>Full moon?</title>
+        <link rel="stylesheet" href="media/reset.css" />
+        <link rel="stylesheet" href="media/screen.css" />
+        <link rel="stylesheet" media="screen and (max-device-width: 480px)" href="media/iphone.css" />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="media/icon.png" />
+        <link rel="apple-touch-startup-image" href="media/startup.jpg" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
     </head>
     <body class="<?php echo $data['status'] == 'Yes' ? 'fullmoon' : 'moon' ?>">
         <div class="distance"></div>
@@ -19,8 +24,8 @@
             <?php endif; ?>
         </div>
         <address class="about">
-            <a href="about.php" title="About"><img src="media/about.png" alt="About" /></a>
-        <address>
+            <a href="about.php" title="About"><img src="media/about.png" alt="About" width="16" height="16" /></a>
+        </address>
 
         <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

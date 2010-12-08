@@ -1,0 +1,36 @@
+html, body {
+    background-image: url("background_portrait.jpg");
+    background-size: 600px 800px;
+    background-position: 50% 50% !important;
+}
+
+* {
+    -webkit-touch-callout: none;
+}
+
+h1.answer {
+    font-size: 7em !important;
+    padding-top: 60px;
+    padding-right: 130px;
+    text-shadow: #000 1px 1px 1px;
+}
+
+p.subtitle {
+    font-size: 1.2em;
+    padding: 5px 0 0 85px;
+    margin: 0;
+}
+
+.container {
+    width: 320px;
+    margin: 0 auto;
+    text-align: left;
+    background-repeat: no-repeat;
+    background-position: 210px 60px;
+    background-size: 60px 60px;
+}
+
+.about {
+    bottom: 15px;
+    right: 20px;
+}
