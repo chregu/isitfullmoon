@@ -60,6 +60,7 @@ address.back {
 .card {
     -webkit-transition: -webkit-transform 1s;
     -webkit-transform-style: preserve-3d;
+    opacity: 1 !important;
 }
 
 .stack.flipped .card.front {
