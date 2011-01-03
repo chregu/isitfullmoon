@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="media/reset.css" />
         <link rel="stylesheet" href="media/screen.css?v=<?php echo $version; ?>" />
         <link rel="stylesheet" media="screen and (max-device-width: 480px)" href="media/iphone.css?v=<?php echo $version; ?>" />
+        <link rel="stylesheet" media="screen and (min-device-width: 481px)" href="media/desktop.css?v=<?php echo $version; ?>" />
         <link rel="shortcut icon" href="favicon.ico" />
         <link rel="apple-touch-icon-precomposed" href="media/icon.png" />
         <link rel="apple-touch-startup-image" href="media/startup.jpg" />

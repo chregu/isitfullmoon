@@ -120,7 +120,6 @@ address.back {
 
 .card {
     background: #15152d;
-    background-image: url("background.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     position: absolute;
