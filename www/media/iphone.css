@@ -1,7 +1,4 @@
 html, body {
-    background-image: url("background_portrait.jpg");
-    background-size: 600px 800px;
-    background-position: 50% 50% !important;
 }
 
 * {
@@ -22,7 +19,7 @@ p.subtitle {
 }
 
 .container {
-    width: 320px;
+    width: 100%;
     margin: 0 auto;
     text-align: left;
     background-repeat: no-repeat;
@@ -30,7 +27,62 @@ p.subtitle {
     background-size: 60px 60px;
 }
 
-.about {
-    bottom: 15px;
-    right: 20px;
+.card {
+    background-image: url("background_portrait.jpg");
+    background-size: 600px 800px;
+    background-position: 50% 50% !important;
 }
+
+address.about {
+    bottom: 20px;
+    right: 25px;
+}
+
+address.back {
+    top: 25px;
+    right: 25px;
+}
+
+.container.about .column.right {
+    padding-top: 60px;
+    padding-left: 20px;
+}
+
+.container.about .column.left,
+.container.about .examples {
+    display: none;
+}
+
+.stack {
+    -webkit-perspective: 400;
+}
+
+.card {
+    -webkit-transition: -webkit-transform 1s;
+    -webkit-transform-style: preserve-3d;
+}
+
+.stack.flipped .card.front {
+    -webkit-transform: rotateY(-180deg) scale(0.5);
+}
+
+.card.front,
+.stack.undo .card.front {
+    -webkit-transform: rotateY(0deg) scale(1);
+}
+
+.stack.flipped .card.back {
+    -webkit-transition: -webkit-transform 1s;
+    -webkit-transform: rotateY(0deg) scale(1);
+}
+
+.card.back,
+.stack.undo .card.back {
+    -webkit-transition: -webkit-transform 1s;
+    -webkit-transform: rotateY(180deg) scale(0.5);
+}
+
+.card, .card * {
+    -webkit-backface-visibility: hidden;
+}
+

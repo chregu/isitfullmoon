@@ -1,8 +1,5 @@
 html, body {
     background: #15152d;
-    background-image: url("background.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
     color: #f9f9f9;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     height: 100%;
@@ -39,12 +36,12 @@ p {
 }
 
 .column.left {
-    width: 340px;
+    width: 320px;
     padding-right: 30px;
 }
 
 .column.right {
-    width: 250px;
+    width: 270px;
 }
 
 ul {
@@ -60,9 +57,11 @@ li {
     margin-left: 15px;
 }
 
-h2 {
+strong {
     font-weight: normal;
-    font-style: italic;
+}
+
+h2 {
     margin-bottom: 5px;
 }
 
@@ -89,17 +88,56 @@ p.subtitle {
     background-position: 400px top;
 }
 
-body.moon .container {
+body.moon .container.moon {
     background-image: url("moon.png");
 }
 
-body.fullmoon .container {
+body.fullmoon .container.moon {
     background-image: url("fullmoon.png");
 }
 
-.about {
+address.about {
     position: absolute;
     bottom: 30px;
-    right: 40px;
+    right: 35px;
 }
 
+address.back {
+    position: absolute;
+    top: 40px;
+    right: 35px;
+}
+
+.container {
+    position: relative;
+}
+
+.stack {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.card {
+    background: #15152d;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: opacity 0.5s ease-out;
+}
+
+.card.front {
+}
+
+.stack.flipped .card.back {
+    opacity: 0.96;
+}
+
+.card.back,
+.stack.undo .card.back {
+    display: none;
+    opacity: 0;
+}
