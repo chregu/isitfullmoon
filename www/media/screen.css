@@ -100,12 +100,14 @@ address.about {
     position: absolute;
     bottom: 30px;
     right: 35px;
+    cursor: pointer;
 }
 
 address.back {
     position: absolute;
     top: 40px;
     right: 35px;
+    cursor: pointer;
 }
 
 .container {
@@ -135,8 +137,11 @@ address.back {
     opacity: 0.96;
 }
 
-.card.back,
-.stack.undo .card.back {
+.card.back {
     display: none;
+    opacity: 0;
+}
+
+.stack.undo .card.back {
     opacity: 0;
 }

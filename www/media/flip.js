@@ -1,14 +1,13 @@
-
-$(document).ready(function() {
+$(function() {
 
     // load about page
     $('.card.back').load('about.php .card.front', function () {
 
         // close button on about page        
-        $('address.back a').bind('click', function (e) {
+        $('address.back a').bind('click tap', function (e) {
 
             // flip back, setTimeout needed for webkit-transition
-            setTimeout("$('.stack').addClass('undo');", 1);
+            setTimeout("$('.stack').addClass('undo')", 1);
         
             // hide back and remove flipped after 0.5sec
             setTimeout("$('.card.back').hide()", 500);
@@ -18,11 +17,12 @@ $(document).ready(function() {
             history.replaceState({}, "Full moon?", '.');
 
             e.preventDefault();
-        });
+
+        }).get(0).removeAttribute('href');
     });
 
     // info button
-    $('address.about a').bind('click', function (e) {
+    $('address.about a').bind('click tap', function (e) {
 
         // make back visible
         $('.card.back').show();
@@ -34,5 +34,6 @@ $(document).ready(function() {
         history.replaceState({}, "About «Is it full moon?»", 'about.php');
 
         e.preventDefault();
-    });
+
+    }).get(0).removeAttribute('href');
 });
