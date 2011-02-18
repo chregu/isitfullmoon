@@ -1,5 +1,5 @@
 <?php include("../inc/fullmoon.php"); ?>
-<?php $version = 25; ?>
+<?php $version = 26; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
