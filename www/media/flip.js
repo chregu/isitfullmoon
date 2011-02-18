@@ -6,6 +6,14 @@ $(function() {
         // close button on about page        
         $('address.back a').bind('click tap', function (e) {
 
+            // fallback for browser that don't support the history API
+            if (!('replaceState' in window.history)) return true;
+    
+            // Ensure middle, control and command clicks act normally
+            if (e.which == 2 || e.metaKey || e.ctrlKey){
+                return true;
+            }
+
             // flip back, setTimeout needed for webkit-transition
             setTimeout("$('.stack').addClass('undo')", 1);
         
@@ -17,16 +25,24 @@ $(function() {
             history.replaceState({}, "Full moon?", '.');
 
             e.preventDefault();
-
-        }).get(0).removeAttribute('href');
+            return false;
+        });
     });
 
     // info button
     $('address.about a').bind('click tap', function (e) {
 
+        // fallback for browser that don't support the history API
+        if (!('replaceState' in window.history)) return true;
+
+        // Ensure middle, control and command clicks act normally
+        if (e.which == 2 || e.metaKey || e.ctrlKey){
+            return true;
+        }
+
         // make back visible
         $('.card.back').show();
-        
+
         // fade in back, setTimeout needed for webkit-transition
         setTimeout("$('.stack').addClass('flipped')", 1);
 
@@ -34,6 +50,6 @@ $(function() {
         history.replaceState({}, "About «Is it full moon?»", 'about.php');
 
         e.preventDefault();
-
-    }).get(0).removeAttribute('href');
+        return false;
+    });
 });
