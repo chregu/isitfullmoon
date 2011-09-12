@@ -17,6 +17,11 @@
         <meta name="viewport" content="user-scalable=no, width=device-width" />
         <script src="media/zepto.min.js"></script>
         <script src="media/flip.js?v=<?php echo $version; ?>"></script>
+        <meta property="og:title" content="Is it full moon?"/>
+        <meta property="og:type" content="moon"/>
+        <meta property="og:url" content="http://isitfullmoon.com/"/>
+        <meta property="og:image" content="http://isitfullmoon.com/media/fullmoon.png"/>
+        <meta property="og:description" content="<?php if ($data['status'] == 'Yes'): ?>Yes… it is full moon.<?php else: ?>No… it’s not full moon.<?php endif; ?>"/>
     </head>
     <body class="<?php echo $data['status'] == 'Yes' ? 'fullmoon' : 'moon' ?>">
         <div class="stack">
