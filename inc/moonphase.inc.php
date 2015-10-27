@@ -356,13 +356,13 @@ function phase ( $time=0 )  {
 	}
 	$pdate = jtime( $time );
     
-	$pphase;	// illuminated fraction
-	$mage;		// age of moon in days
-	$dist;		// distance in kilometres
-	$angdia;	// angular diameter in degrees
-	$sudist;	// distance to Sun
-	$suangdia;	// sun's angular diameter
     
+	$pphase = 0;	// illuminated fraction
+	$mage = 0;		// age of moon in days
+	$dist = 0;		// distance in kilometres
+	$angdia = 0;	// angular diameter in degrees
+	$sudist = 0;	// distance to Sun
+	$suangdia = 0;	// sun's angular diameter
     //	my ($Day, $N, $M, $Ec, $Lambdasun, $ml, $MM, $MN, $Ev, $Ae, $A3, $MmP,
     //	   $mEc, $A4, $lP, $V, $lPP, $NP, $y, $x, $Lambdamoon, $BetaM,
     //	   $MoonAge, $MoonPhase,

@@ -1,5 +1,8 @@
 <?php
-include("moonphase.inc.php");
+
+namespace IsItFullMoon;
+
+require_once("moonphase.inc.php");
 
 $date = time() ;
 $fullmoon = "No";
@@ -16,4 +19,3 @@ foreach(phaselist($date - 3600 * 12 ,$date + 3600 * 12) as $d) {
 }
 
 $data['status'] = $fullmoon;
-
