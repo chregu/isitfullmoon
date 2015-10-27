@@ -1,4 +1,7 @@
 <?php
+
+namespace IsItFullMoon;
+
 require_once("moonphase.inc.php");
 
 $date = time() ;
