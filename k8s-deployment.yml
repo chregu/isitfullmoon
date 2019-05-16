@@ -1,0 +1,131 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: isitfullmoon
+  labels:
+    app: isitfullmoon
+  namespace: isitfullmoon
+
+spec:
+  selector:
+    matchLabels:
+      app: isitfullmoon
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: isitfullmoon
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:stable
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-config-volume
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+            - name: app-data
+              mountPath: "/var/app"
+            - name: "php-socket"
+              mountPath: /sock
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 60
+            timeoutSeconds: 5
+        - name: php-fpm
+          image: php:7.2-fpm
+          ports:
+            - containerPort: 9000
+          livenessProbe:
+            tcpSocket:
+              port: 9000
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 2
+          volumeMounts:
+            - name: php-socket
+              mountPath: /sock
+            - name: app-data
+              mountPath: "/var/app"
+      initContainers:
+        - name: setup
+          image: docker.gitlab.liip.ch/chregu/test/isitfullmoon:latest
+          env:
+            - name: APP_ENV
+              value: prod
+          volumeMounts:
+            - name: app-data
+              mountPath: "/var/app"
+      imagePullSecrets:
+        - name: regcred
+      volumes:
+        - name: app-data
+          emptyDir: {}
+        - name: php-socket
+          emptyDir: {}
+        - name: nginx-config-volume
+          configMap:
+            name: nginx-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: isitfullmoon-service
+  namespace: isitfullmoon
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: isitfullmoon
+---
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: nginx-config
+data:
+  nginx.conf: |
+    events {
+    }
+    http {
+      include    mime.types;
+      server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # Set nginx to serve files from the shared volume!
+        root /var/app/www;
+        server_name _;
+        location / {
+          index index.php index.html index.htm;
+          try_files $uri $uri/ =404;
+        }
+        location ~ \.php$ {
+          include fastcgi_params;
+          fastcgi_param REQUEST_METHOD $request_method;
+          fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+          fastcgi_pass 127.0.0.1:9000;
+        }
+      }
+    }
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: isitfullmoon
+  namespace: isitfullmoon
+spec:
+  rules:
+    - host: isitfullmoon.com
+      http:
+        paths:
+          - backend:
+              serviceName: isitfullmoon-service
+              servicePort: 80
+
