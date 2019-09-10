@@ -28,6 +28,8 @@ if (isset($_GET['tz'])) {
 }
 
 
+// CORS support: http://www.w3.org/TR/cors/#access-control-allow-origin-response-header
+header('Access-Control-Allow-Origin: *');
        
        
 switch ($_GET['format']) {
