@@ -1,5 +1,22 @@
 <?php include("../inc/fullmoon.php"); ?>
 <?php $version = 26; ?>
+<?php ini_set("date.timezone","UTC");
+
+
+$time = time();
+
+$d = phasemoon($time, 0.5);
+
+if ($d < $time) {
+    $data['next'] = phasemoon($time,0.5,true);
+
+} else {
+    $data['next'] = $d;
+    $prevnew = phasemoon($time,0);
+}
+
+    $data['next8601'] = date("c",$data['next']);?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,7 +33,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="viewport" content="user-scalable=no, width=device-width" />
         <meta name="title" content="Is it Full Moon?">
-        <meta name="description" content="Right now, there's  <?php echo $data['status'] == 'Yes' ? 'a Full Moon.' : 'no Full Moon.'?>">
+        <meta name="description" content="Right now, there's <?php echo $data['status'] == 'Yes' ? 'a Full Moon.' : 'no Full Moon.'?>. Next one is at <?php echo  $data['next8601'] ?>">
         <meta name="keywords" content="Full Moon, fullmoon, isitfullmoon">
         <meta name="revisit-after" content="1 days">
         <meta name="robots" content="index, follow">

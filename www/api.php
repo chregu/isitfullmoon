@@ -25,8 +25,12 @@ if (isset($_GET['tz'])) {
     $data['next8601'] = date("c",$data['next']);
 } else if (isset($_GET['iso8601']) && $_GET['iso8601'] == 1) {
     ini_set("date.timezone","UTC");
-}
+} else {
+    ini_set("date.timezone","UTC");
 
+    $data['prev8601'] = date("c",$data['prev']);
+    $data['next8601'] = date("c",$data['next']);
+}
 
        
        
