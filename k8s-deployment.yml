@@ -11,11 +11,33 @@ spec:
     matchLabels:
       app: isitfullmoon
   replicas: 1
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
+      namespace: isitfullmoon
       labels:
         app: isitfullmoon
     spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              preference:
+                matchExpressions:
+                  - key: node-role.kubernetes.io/controlplane
+                    operator: DoesNotExist
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - isitfulloon
+                topologyKey: "kubernetes.io/hostname"
+              weight: 10
       containers:
         - name: nginx
           image: nginx:stable
@@ -53,10 +75,8 @@ spec:
               mountPath: "/var/app"
       initContainers:
         - name: setup
-          image: docker.gitlab.liip.ch/chregu/test/isitfullmoon:latest
-          env:
-            - name: APP_ENV
-              value: prod
+          imagePullPolicy: Always
+          image: docker.gitlab.liip.ch/chregu/repo/isitfullmoon:latest
           volumeMounts:
             - name: app-data
               mountPath: "/var/app"
@@ -88,7 +108,8 @@ spec:
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: nginx-config
+    namespace: isitfullmoon
+    name: nginx-config
 data:
   nginx.conf: |
     events {
@@ -120,9 +141,17 @@ kind: Ingress
 metadata:
   name: isitfullmoon
   namespace: isitfullmoon
+  annotations:
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
 spec:
   rules:
     - host: isitfullmoon.com
+      http:
+        paths:
+          - backend:
+              serviceName: isitfullmoon-service
+              servicePort: 80
+    - host: www.isitfullmoon.com
       http:
         paths:
           - backend:
