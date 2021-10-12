@@ -16,9 +16,11 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="viewport" content="user-scalable=no, width=device-width" />
         <meta name="title" content="Is it Full Moon?">
-        <meta name="description" content="Is it Full Moon right now? Right now:  <?php echo $data['status'] == 'Yes' ? 'Yes, it is Full Moon.' : 'No, it’s not Full Moon.'?>">
+        <meta name="description" content="Right now, there's  <?php echo $data['status'] == 'Yes' ? 'a Full Moon.' : 'no Full Moon.'?>">
         <meta name="keywords" content="Full Moon, fullmoon, isitfullmoon">
+        <meta name="revisit-after" content="1 days">
         <meta name="robots" content="index, follow">
+        <meta property="og:image" content="<?php echo $data['status'] == 'Yes' ? 'https://isitfullmoon.com/media/fullmoon.png' : 'https://isitfullmoon.com/media/moon.png' ?>" />
         <script src="media/zepto.min.js"></script>
         <script src="media/flip.js?v=<?php echo $version; ?>"></script>
     </head>
