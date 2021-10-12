@@ -15,6 +15,10 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <meta name="title" content="Is it Full Moon?">
+        <meta name="description" content="Is it Full Moon right now? We'll tell you. ">
+        <meta name="keywords" content="full moon, fullmoon, isitfullmoon">
+        <meta name="robots" content="index, follow">
         <script src="media/zepto.min.js"></script>
         <script src="media/flip.js?v=<?php echo $version; ?>"></script>
     </head>
