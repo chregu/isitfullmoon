@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset=utf-8 />
-        <title>Full moon?</title>
+        <title>Is it Full Moon? <?php echo $data['status'] == 'Yes' ? 'Yes, it is Full Moon.' : 'No, it’s not Full Moon.'?></title>
         <link rel="stylesheet" href="media/reset.css" />
         <link rel="stylesheet" href="media/screen.css?v=<?php echo $version; ?>" />
         <link rel="stylesheet" media="screen and (max-device-width: 480px)" href="media/iphone.css?v=<?php echo $version; ?>" />
@@ -16,8 +16,8 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="viewport" content="user-scalable=no, width=device-width" />
         <meta name="title" content="Is it Full Moon?">
-        <meta name="description" content="Is it Full Moon right now? We'll tell you. ">
-        <meta name="keywords" content="full moon, fullmoon, isitfullmoon">
+        <meta name="description" content="Is it Full Moon right now? Right now:  <?php echo $data['status'] == 'Yes' ? 'Yes, it is Full Moon.' : 'No, it’s not Full Moon.'?>">
+        <meta name="keywords" content="Full Moon, fullmoon, isitfullmoon">
         <meta name="robots" content="index, follow">
         <script src="media/zepto.min.js"></script>
         <script src="media/flip.js?v=<?php echo $version; ?>"></script>
@@ -28,9 +28,9 @@
                 <div class="distance"></div>
                 <div class="container moon">
                     <?php if ($data['status'] == 'Yes'): ?>
-                    <h1 class="answer"><span class="first">Y</span>es</h1> <p class="subtitle">… it is full moon.</p>
+                    <h1 class="answer"><span class="first">Y</span>es</h1> <p class="subtitle">… it is Full Moon.</p>
                     <?php else: ?>
-                    <h1 class="answer">No</h1> <p class="subtitle">… it’s not full moon.</p>
+                    <h1 class="answer">No</h1> <p class="subtitle">… it’s not Full Moon.</p>
                     <?php endif; ?>
                 </div>
                 <address class="about">
