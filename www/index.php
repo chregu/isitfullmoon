@@ -33,7 +33,16 @@ if ($d < $time) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="viewport" content="user-scalable=no, width=device-width" />
         <meta name="title" content="Is it Full Moon?">
-        <meta name="description" content="Right now, there's <?php echo $data['status'] == 'Yes' ? 'a Full Moon.' : 'no Full Moon.'?>. Next one is at <?php echo  $data['next8601'] ?>">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://isitfullmoon.com/">
+        <meta property="og:title" content="Is it Full Moon? <?php echo $data['status'] == 'Yes' ? 'Yes!': 'No!'?>">
+        <meta property="twitter:card" content="summary">
+        <meta property="twitter:url" content="https://isitfullmoon.com/">
+        <meta property="twitter:title" content="Is it Full Moon? <?php echo $data['status'] == 'Yes' ? 'Yes!': 'No!'?>">
+        <meta property="twitter:description" content="Right now, there's <?php echo $data['status'] == 'Yes' ? 'a Full Moon' : 'no Full Moon'?>. Next one is at <?php echo  $data['next8601'] ?>">
+        <meta property="twitter:image" content="<?php echo $data['status'] == 'Yes' ? 'https://isitfullmoon.com/media/fullmoon.png' : 'https://isitfullmoon.com/media/moon.png' ?>">
+        <meta property="og:description" content="Right now, there's <?php echo $data['status'] == 'Yes' ? 'a Full Moon' : 'no Full Moon'?>. Next one is at <?php echo  $data['next8601'] ?>">
+        <meta name="description" content="Right now, there's <?php echo $data['status'] == 'Yes' ? 'a Full Moon' : 'no Full Moon'?>. Next one is at <?php echo  $data['next8601'] ?>">
         <meta name="keywords" content="Full Moon, fullmoon, isitfullmoon">
         <meta name="revisit-after" content="1 days">
         <meta name="robots" content="index, follow">

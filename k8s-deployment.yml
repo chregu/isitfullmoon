@@ -59,7 +59,7 @@ spec:
             periodSeconds: 60
             timeoutSeconds: 5
         - name: php-fpm
-          image: php:7.4-fpm
+          image: php:8.0-fpm
           ports:
             - containerPort: 9000
           livenessProbe:
