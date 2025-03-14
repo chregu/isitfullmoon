@@ -14,7 +14,7 @@
                 <div class="distance"></div>
                 <div class="container about">
                     <div class="column left">
-                    <p>Rest URL: <a href="api.php">http://isitfullmoon.com/api.php</a></p>
+                    <p>Rest URL: <a href="api.php">https://isitfullmoon.com/api.php</a></p>
                     
                     <h2>Parameters:</h2>
                     <ul>
@@ -46,10 +46,10 @@
                     </ul>
                     </div>
         
-                    <p>Written by <a href="http://chregu.tv/">chregu</a>, designed by <a href="http://equivalence.ch/">fabian</a>, 
-                        inspired by <a href="http://lejoe.com/blog">lejoe</a>'s <a href="http://isitfishday.com/">isitfishday.com</a> 
-                        and by <a href="http://wait-till-i.com/">Chris Heilmann</a>'s <a href="http://isithackday.com/">isithackday.com</a>. 
-                        <a href="http://github.com/chregu/isitfullmoon/tree/master">Source Code</a> on GitHub.</p>
+                    <p>Written by <a href="https://chregu.tv/">chregu</a>, designed by <a href="https://equivalence.ch/">fabian</a>, 
+                        inspired by <a href="https://lejoe.com">lejoe</a>'s isitfishday (†)
+                        and by <a href="https://wait-till-i.com/">Chris Heilmann</a>'s <a href="https://isithackday.com/">isithackday.com</a>. 
+                        <a href="https://github.com/chregu/isitfullmoon/tree/master">Source Code</a> on GitHub.</p>
                     </div>
                 </div>
                 <address class="back">
