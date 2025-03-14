@@ -47,7 +47,7 @@
                     </div>
         
                     <p>Written by <a href="http://chregu.tv/">chregu</a>, designed by <a href="http://equivalence.ch/">fabian</a>, 
-                        inspired by <a href="http://lejoe.com/blog">lejoe</a>'s <a href="http://isitfishday.com/">isitfishday.com</a> 
+                        inspired by <a href="http://lejoe.com">lejoe</a>'s isitfishday (†)
                         and by <a href="http://wait-till-i.com/">Chris Heilmann</a>'s <a href="http://isithackday.com/">isithackday.com</a>. 
                         <a href="http://github.com/chregu/isitfullmoon/tree/master">Source Code</a> on GitHub.</p>
                     </div>
