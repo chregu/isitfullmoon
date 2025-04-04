@@ -34,7 +34,7 @@ if (isset($_GET['tz'])) {
 
        
        
-switch ($_GET['format']) {
+switch ($_GET['format'] ?? null) {
     case "xml":
         header("Content-Type: text/xml");
         print xmldata($data);
