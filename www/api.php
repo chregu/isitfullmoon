@@ -21,15 +21,15 @@ if ($d < $time) {
 
 if (isset($_GET['tz'])) {
     ini_set("date.timezone",$_GET['tz']);
-    $data['prev8601'] = date("c",$data['prev']);
-    $data['next8601'] = date("c",$data['next']);
+    $data['prev8601'] = date("c",(int) $data['prev']);
+    $data['next8601'] = date("c",(int) $data['next']);
 } else if (isset($_GET['iso8601']) && $_GET['iso8601'] == 1) {
     ini_set("date.timezone","UTC");
 } else {
     ini_set("date.timezone","UTC");
 
-    $data['prev8601'] = date("c",$data['prev']);
-    $data['next8601'] = date("c",$data['next']);
+    $data['prev8601'] = date("c",(int) $data['prev']);
+    $data['next8601'] = date("c",(int) $data['next']);
 }
 
        
