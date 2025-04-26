@@ -15,7 +15,7 @@ if ($d < $time) {
     $prevnew = phasemoon($time,0);
 }
 
-    $data['next8601'] = date("c",$data['next']);?>
+    $data['next8601'] = date("c",(int) $data['next']);?>
 
 <!DOCTYPE html>
 <html lang="en">
